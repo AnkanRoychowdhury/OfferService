@@ -8,11 +8,10 @@ const { Logger } = require('../utils/logger');
 const { development, production } = require('../config/config');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-let customConfig = development;
+let config = development;
 if(env === 'production'){
-  customConfig = production
+  config = production
 }
-const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
 let sequelize;
@@ -20,8 +19,8 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
   Logger.info(`Database connected successfully, User => ${config.username}`);
 } else {
-  sequelize = new Sequelize(customConfig.database, customConfig.username, customConfig.password, customConfig);
-  Logger.info(`Database connected successfully, User => ${customConfig.username}`);
+  sequelize = new Sequelize(config.database, config.username, config.password, config);
+  Logger.info(`Database connected successfully, User => ${config.username}`);
 }
 
 fs
