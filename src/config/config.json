@@ -1,0 +1,25 @@
+{
+  "production": {
+    "username": "avnadmin",
+    "password": "AVNS_dBAHhcBSQTsbu2BeZPD",
+    "database": "offer_db",
+    "host": "ankan-mysql-roychowdhuryankan2001-4094.a.aivencloud.com",
+    "dialect": "mysql",
+    "port": 25407,
+    "ssl": "required"
+  },
+  "development": {
+    "username": "root",
+    "password": "Ankan2001@",
+    "database": "offer_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
