@@ -1,4 +1,3 @@
-const { RAZORPAY_KEY, RAZORPAY_SECRET } = require("../config/serverConfig");
 const OrderRepository = require("../repository/order-repository");
 const Razorpay = require('razorpay');
 
@@ -24,8 +23,8 @@ class OrderService {
             const amount = orderTotal;
             // Create a razorpayInstance
             const razorpayInstance = new Razorpay({
-                key_id: RAZORPAY_KEY,
-                key_secret: RAZORPAY_SECRET,
+                key_id: process.env.RAZORPAY_KEY,
+                key_secret: process.env.RAZORPAY_SECRET,
             });
             const paymentOptions = {
                 amount: amount * 100,
